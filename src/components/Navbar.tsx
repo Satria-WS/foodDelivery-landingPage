@@ -8,8 +8,9 @@ import ResponsiveMenu from "./ResponsiveMenu";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const handleClick=() => {
-    
+    setOpen(prevOpen => !prevOpen);
   }
+  console.log(open)
   return (
     <>
       <nav>
@@ -42,14 +43,14 @@ const Navbar = () => {
               </button>
             </div>
             {/* Mobile hamburger menu section */}
-            <div className="md:hidden">
+            <div className="md:hidden" onClick={handleClick}>
               <MdOutlineMenu className="text-4xl" />
             </div>
           </div>
         </div>
       </nav>
       {/* mobile sidebar section */}
-      <ResponsiveMenu/>
+      <ResponsiveMenu open={open } />
     </>
   );
 };
