@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             {/* Mobile hamburger menu section */}
             <div className="md:hidden" onClick={handleClick}>
-              <MdOutlineMenu className="text-4xl" />
+             {open? (<MdOutlineMenuOpen className="text-4xl animate-spin-once" />) : (<MdOutlineMenu className="text-4xl animate-spin-once"/>) } 
             </div>
           </div>
         </div>
