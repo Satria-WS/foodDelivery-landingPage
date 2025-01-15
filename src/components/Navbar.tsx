@@ -1,7 +1,14 @@
 import { LuChefHat } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { NavbarMenu } from "../data/navbarMenu";
+import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineMenuOpen } from "react-icons/md";
+import { useState } from "react";
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick=() => {
+    
+  }
   return (
     <>
       <nav>
@@ -32,6 +39,10 @@ const Navbar = () => {
               <button className="text-2xl hover:bg-secondary hover:text-white rounded-full duration-200 p-2">
                 <CiSearch />
               </button>
+            </div>
+            {/* Mobile hamburger menu section */}
+            <div className="md:hidden">
+              <MdOutlineMenu className="text-4xl" />
             </div>
           </div>
         </div>
