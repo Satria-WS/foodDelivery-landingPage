@@ -4,6 +4,7 @@ import { NavbarMenu } from "../data/navbarMenu";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { useState } from "react";
+import ResponsiveMenu from "./ResponsiveMenu";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const handleClick=() => {
@@ -48,6 +49,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* mobile sidebar section */}
+      <ResponsiveMenu/>
     </>
   );
 };
