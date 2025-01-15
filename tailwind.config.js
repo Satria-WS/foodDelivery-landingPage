@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#2F2F2F",
+        secondary:"#FF7E00"
+      },
       container: {
         center: true,
         padding: {
@@ -15,7 +19,8 @@ export default {
           xl: "5rem",
           "2xl":"6rem"
         }
-      }
+      },
+    
     },
   },
   plugins: [],
