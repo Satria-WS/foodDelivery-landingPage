@@ -3,14 +3,18 @@ import { CiSearch } from "react-icons/ci";
 import { NavbarMenu } from "../data/navbarMenu";
 import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineMenuOpen } from "react-icons/md";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ResponsiveMenu from "./ResponsiveMenu";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const handleClick=() => {
-    setOpen(prevOpen => !prevOpen);
-  }
-  console.log(open)
+  const [hasSpun, setHasSpun] = useState(false);
+
+  const handleClick = () => {
+    setHasSpun(false); // Set to true only once on first click
+
+    setOpen((prevOpen) => !prevOpen);
+  };
+  console.log(hasSpun);
   return (
     <>
       <nav>
@@ -44,13 +48,21 @@ const Navbar = () => {
             </div>
             {/* Mobile hamburger menu section */}
             <div className="md:hidden" onClick={handleClick}>
-             {open? (<MdOutlineMenuOpen className="text-4xl animate-spin-once" />) : (<MdOutlineMenu className="text-4xl animate-spin-once"/>) } 
+              {open ? (
+                <MdOutlineMenuOpen
+                  className={`text-4xl ${hasSpun ? "animate-spin-once" : ""}`}
+                />
+              ) : (
+                <MdOutlineMenu
+                  className={`text-4xl ${hasSpun ? "animate-spin-once" : ""}`}
+                />
+              )}
             </div>
           </div>
         </div>
       </nav>
       {/* mobile sidebar section */}
-      <ResponsiveMenu open={open } />
+      <ResponsiveMenu open={open} />
     </>
   );
 };
