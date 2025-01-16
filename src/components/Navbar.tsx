@@ -5,6 +5,8 @@ import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { useState, useRef, useEffect } from "react";
 import ResponsiveMenu from "./ResponsiveMenu";
+import IconAnimation from "./IconAnimation";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [hasSpun, setHasSpun] = useState(false);
@@ -18,6 +20,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
+
         <div className="container">
           <div className="flex items-center justify-between py-8">
             {/* logo section */}
